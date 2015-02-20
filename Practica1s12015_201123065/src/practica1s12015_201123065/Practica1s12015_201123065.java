@@ -16,7 +16,8 @@ public class Practica1s12015_201123065 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Menu menu = new Menu();
+        tst menu = new tst();
+        //Menu menu = new Menu();
         menu.setVisible(true);
         // TODO code application logic here
     }

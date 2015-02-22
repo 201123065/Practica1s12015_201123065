@@ -6,69 +6,28 @@
 
 package practica1s12015_201123065;
 
-import java.awt.Color;
-import java.awt.Image;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 
 /**
  *
  * @author marcosmayen
  */
-public class tst extends javax.swing.JFrame {
+public class catalogo extends javax.swing.JFrame {
 
     /**
-     * Creates new form tst
+     * Creates new form catalogo
      */
-    
-    public tst() {
+    public catalogo() {
         initComponents();
     }
-
-    public void matriz(int x,int y)
-    {
-        int i,j=0;
-        JLabel[][] matlbl= new JLabel[x][y];
-        for(i=0;i<x;i++)
-        {
-            for(j=0;j<y;j++)
-            {
-                matlbl[i][j]= new JLabel(i+","+j);
-                matlbl[i][j].setBounds(i*50+70, j*50+50, 50, 50);
-                matlbl[i][j].setEnabled(false);
-                add(matlbl[i][j]);
-            }
-        }
-        fondo(i,j);
-        paneles(i,j);
-    }
-    public void fondo(int x, int y)
-    {
-        ImageIcon icono = new ImageIcon("/imagenes/bg.jpg");
-        JLabel fondo = new JLabel();
-        fondo.setIcon(icono);
-        fondo.setBounds(10, 10, 100, 100);
-        add(fondo);
-        
-        
-    }
     
-    public void paneles(int i, int j)
+    public void crearJugador(String tipo)
     {
-       
-        JPanel PanelP = new JPanel();
-        PanelP.setBounds(5, 50, 55, j*50);
-        PanelP.setBackground(Color.green);
-        add(PanelP);
-        
-        JPanel PanelZ = new JPanel();
-        PanelZ.setBounds(i*50+85, 50, 55, j*50);
-        PanelZ.setBackground(Color.BLACK);
-        add(PanelZ); 
+        JLabel Nombre  = new JLabel(tipo);
+        Nombre.setBounds(10, 10, 100, 50);
+        add(Nombre);
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -78,32 +37,17 @@ public class tst extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jToolBar1 = new javax.swing.JToolBar();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
-
-        jToolBar1.setRollover(true);
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jMenu1.setText("File");
-        jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
-
-        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 725, Short.MAX_VALUE)
+            .addGap(0, 664, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 354, Short.MAX_VALUE)
+            .addGap(0, 370, Short.MAX_VALUE)
         );
 
         pack();
@@ -126,28 +70,24 @@ public class tst extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(tst.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(catalogo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(tst.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(catalogo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(tst.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(catalogo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(tst.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(catalogo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new tst().setVisible(true);
+                new catalogo().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JToolBar jToolBar1;
     // End of variables declaration//GEN-END:variables
 }

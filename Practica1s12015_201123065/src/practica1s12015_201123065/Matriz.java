@@ -24,13 +24,11 @@ public class Matriz extends javax.swing.JFrame {
     
     public Matriz() {
         initComponents();
-        Campo.setPreferredSize(new Dimension(100,300));
-        setSize(100,300);
     }
     
     public void CampoBatalla(int x, int y)
     {
-        Campo.setPreferredSize(new Dimension(x,y));
+        Campo.setPreferredSize(new Dimension(x*100,y*100));
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

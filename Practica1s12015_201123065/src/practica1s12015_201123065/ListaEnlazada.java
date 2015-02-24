@@ -1,5 +1,11 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 
-package pruebanodos;
+package practica1s12015_201123065;
+
 
 public class ListaEnlazada {
     Nodo cabeza;

@@ -39,9 +39,14 @@ public class Menu extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         Error = new javax.swing.JLabel();
-        JPlanta = new javax.swing.JButton();
+        btnPlanta = new javax.swing.JButton();
         Filas = new javax.swing.JTextField();
-        JZombi = new javax.swing.JButton();
+        btnZombi = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         jInternalFrame1.setVisible(true);
 
@@ -59,6 +64,7 @@ public class Menu extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jButton1.setText("Iniciar Juego");
+        jButton1.setEnabled(false);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -81,15 +87,15 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel2.setText("Filas");
 
-        JPlanta.setText("Jugador Plantas");
-        JPlanta.addActionListener(new java.awt.event.ActionListener() {
+        btnPlanta.setText("Jugador Plantas");
+        btnPlanta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JPlantaActionPerformed(evt);
+                btnPlantaActionPerformed(evt);
             }
         });
-        JPlanta.addKeyListener(new java.awt.event.KeyAdapter() {
+        btnPlanta.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                JPlantaKeyPressed(evt);
+                btnPlantaKeyPressed(evt);
             }
         });
 
@@ -105,55 +111,101 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        JZombi.setText("Jugador Zombis");
-        JZombi.addActionListener(new java.awt.event.ActionListener() {
+        btnZombi.setText("Jugador Zombis");
+        btnZombi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JZombiActionPerformed(evt);
+                btnZombiActionPerformed(evt);
             }
         });
-        JZombi.addKeyListener(new java.awt.event.KeyAdapter() {
+        btnZombi.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                JZombiKeyPressed(evt);
+                btnZombiKeyPressed(evt);
             }
         });
+
+        jButton2.setText("ez");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jButton3.setText("ep");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        jButton4.setText("Plantas");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        jButton5.setText("Zombis");
+
+        jLabel3.setText("Catalogo");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(JZombi, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(JPlanta, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addGap(105, 105, 105)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(Error)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jButton1)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jLabel2)
-                                            .addGap(21, 21, 21))
-                                        .addComponent(Filas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel1)
-                                .addComponent(Columnas, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(93, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(105, 105, 105)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(Error)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButton1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel2)
+                                        .addGap(21, 21, 21))
+                                    .addComponent(Filas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(Columnas, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(169, 169, 169)
+                        .addComponent(jButton2))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnZombi, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton5))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnPlanta, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(jButton4))))
+                .addContainerGap(90, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(38, 38, 38)
+                    .addComponent(jButton3)
+                    .addContainerGap(339, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(49, Short.MAX_VALUE)
-                .addComponent(JPlanta)
-                .addGap(5, 5, 5)
-                .addComponent(JZombi)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addContainerGap(14, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnPlanta)
+                    .addComponent(jButton4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnZombi)
+                    .addComponent(jButton5))
+                .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jLabel2))
@@ -164,7 +216,14 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(Filas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Error)
-                .addGap(59, 59, 59))
+                .addGap(18, 18, 18)
+                .addComponent(jButton2)
+                .addGap(12, 12, 12))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(204, Short.MAX_VALUE)
+                    .addComponent(jButton3)
+                    .addGap(8, 8, 8)))
         );
 
         pack();
@@ -177,6 +236,7 @@ public class Menu extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         boton();
     }//GEN-LAST:event_jButton1ActionPerformed
+    
     
     
     
@@ -215,22 +275,70 @@ public class Menu extends javax.swing.JFrame {
         
     }
    
+    ListaEnlazada JPlantas;
+    ListaEnlazada JZombi;
+    ListaEnlazada Planta;
+    ListaEnlazada Zombi;
     
+    public void DetectordeListas(ListaEnlazada J1, ListaEnlazada J2,ListaEnlazada P, ListaEnlazada Z)
+    {
+        JPlantas=J1;
+        JZombi=J2;
+        Planta=P;
+        Zombi=Z;
+        if(JZombi.estaVacia()==false)
+        {
+            
+            if(JPlantas.estaVacia()==false)
+            {
+                if(Planta.estaVacia()==false)
+                {
+                    if(Zombi.estaVacia()==false)
+                    {
+                        jButton1.setEnabled(true);
+                    }
+                }
+            }
+            
+        }
+        else
+        {
+            System.out.println("D");
+        }
+        
+        
+    }
     
+    public void CrearListas()
+    {
+        JPlantas = new ListaEnlazada();
+        JZombi = new ListaEnlazada();
+        Planta = new ListaEnlazada();
+        Zombi = new ListaEnlazada();
+    }
     
     
     private void ColumnasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ColumnasActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ColumnasActionPerformed
 
-    private void JPlantaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JPlantaActionPerformed
-        creacion("plantas");
-    }//GEN-LAST:event_JPlantaActionPerformed
+    
+    private void btnPlantaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlantaActionPerformed
+        Jugadores op = new Jugadores();
+        op.setTipo("planta",JPlantas,JZombi,Planta,Zombi);
+        op.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnPlantaActionPerformed
 
-    private void JPlantaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JPlantaKeyPressed
+    
+  
+    
+    
+    
+    private void btnPlantaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnPlantaKeyPressed
         
         
-    }//GEN-LAST:event_JPlantaKeyPressed
+    }//GEN-LAST:event_btnPlantaKeyPressed
 
     private void FilasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FilasActionPerformed
         // TODO add your handling code here:
@@ -262,25 +370,55 @@ public class Menu extends javax.swing.JFrame {
     
     
     
-    
-    
-    
-    
-    private void JZombiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JZombiActionPerformed
-        PruebaAdd op = new PruebaAdd()  ;
+    private void btnZombiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnZombiActionPerformed
+        Jugadores op = new Jugadores();
+        op.setTipo("zombi",JPlantas,JZombi,Planta,Zombi);
         op.setVisible(true);
-    }//GEN-LAST:event_JZombiActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btnZombiActionPerformed
 
     
     
     
-    
-    
-    
-    
-    private void JZombiKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JZombiKeyPressed
+    private void btnZombiKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnZombiKeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_JZombiKeyPressed
+    }//GEN-LAST:event_btnZombiKeyPressed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        ListaEnlazada aux = JPlantas;
+        for(int i=0;i<JPlantas.size();i++){
+            ObJugador aux2 =(ObJugador)aux.obtener(i);
+            System.out.println(aux2.getNombre());
+        }
+        
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    
+    
+    
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        if(JZombi.estaVacia()==false)
+        {
+            ListaEnlazada aux = JZombi;
+            for(int i=0;i<JZombi.size();i++)
+            {
+                ObJugador aux2 =(ObJugador)aux.obtener(i);
+                System.out.println(aux2.getNombre());
+            }
+        
+        }
+        else
+        {
+            System.out.println("D");
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        catalogo cat = new catalogo();
+        cat.setVisible(true);
+        
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -321,11 +459,16 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JTextField Columnas;
     private javax.swing.JLabel Error;
     private javax.swing.JTextField Filas;
-    private javax.swing.JButton JPlanta;
-    private javax.swing.JButton JZombi;
+    private javax.swing.JButton btnPlanta;
+    private javax.swing.JButton btnZombi;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }

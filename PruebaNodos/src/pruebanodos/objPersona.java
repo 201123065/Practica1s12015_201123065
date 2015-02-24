@@ -3,34 +3,43 @@ package pruebanodos;
 import java.io.Serializable;
 public class objPersona implements Serializable{
     
-    private String nombre, direccion, tel;
+    private String tipo, nombre, extra;
+    private int cantidad;
     
     public objPersona(){
+        setTipo("-");
         setNombre("-");
-        setDir("-");
-        setTel("-");
+        setCant(0);
+        setExtra("-");
     }
-    public objPersona(String nombre,String Dir,String tel){
+    public objPersona(String Tipo,String nombre,int cant,String extra){
+        setTipo(Tipo);
         setNombre(nombre);
-        setDir(Dir);
-        setTel(tel);
+        setCant(cant);
+        setExtra(extra);
     }
+    public String getTipo(){
+        return tipo;
+    }
+    public void setTipo(String tipo){
+        this.tipo=tipo;
+    }   
     public String getNombre(){
         return nombre;
     }
     public void setNombre(String nombre){
         this.nombre=nombre;
     }
-    public String getDir(){
-        return direccion;
+    public int getCant(){
+        return cantidad;
     }
-    public void setDir(String dir){
-        this.direccion = dir;
+    public void setCant(int cantidad){
+        this.cantidad=cantidad;
     }
-    public String getTel(){
-        return tel;
+    public String getExtra(){
+        return extra;
     }
-    public void setTel(String tel){
-        this.tel=tel;
+    public void setExtra(String extra){
+        this.extra = extra;
     }
 }

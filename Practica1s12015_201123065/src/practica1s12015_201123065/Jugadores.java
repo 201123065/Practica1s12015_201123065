@@ -228,7 +228,7 @@ public class Jugadores extends javax.swing.JFrame {
             Guardar.DetectordeListas(JPlanta, listaJugador, Planta, Zombi);
         }
         Guardar.setVisible(true);
-        this.setVisible(false);
+        this.dispose();
         
         /*         
         ListaEnlazada aux = lista;

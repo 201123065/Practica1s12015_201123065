@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 package practica1s12015_201123065;
 import java.io.Serializable;
@@ -12,7 +7,7 @@ import java.io.Serializable;
  */
 public class ObJugado implements Serializable{
     
-     private String Tipo,nombre, Extra;
+     private String Tipo,nombre, Extra,clase;
     private int cantidad;
     String tipodefinido="";
     
@@ -23,12 +18,14 @@ public class ObJugado implements Serializable{
         setExtra("");
     } 
     /**/
-    public ObJugado(String Imagen,String nom,int puntos,String tipo){
+    public ObJugado(String Imagen,String nom,String tipo,int puntos){
+       
         setImagen(Imagen);
         setNombre(nom);
         setPuntos(puntos);
         setTipo(tipo);
     }
+    
     public void setImagen(String extra){
         this.Extra=extra;
     }

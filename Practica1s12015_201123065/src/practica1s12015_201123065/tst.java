@@ -50,11 +50,12 @@ public class tst extends javax.swing.JFrame implements ActionListener{
                 matlbl[i][j].setBounds(i*50+70, j*50+50, 50, 50);
                 matlbl[i][j].setEnabled(false);
                 add(matlbl[i][j]);
+                
             }
         }
         fila=x;
         columna=y;
-        paneles(i,j);
+        paneles();
     }
     ListaEnlazada JPlanta = new ListaEnlazada();
     ListaEnlazada JZombi = new ListaEnlazada();
@@ -74,87 +75,62 @@ public class tst extends javax.swing.JFrame implements ActionListener{
     }
      
      
+       JButton[] imagen = new JButton[10];
      JLabel RestantesJ1, RestantesJ2;
-    public void paneles(int i, int j)
+    public void paneles()
     {
-        
-        ObJugador aux1 =(ObJugador)JPlanta.obtener(0);
-        JLabel J1 = new JLabel(aux1.getNombre());
-        J1.setBounds(5, 30, 55, 20);
-        add(J1);
-        
-        JLabel Personaje1 = new JLabel("restantes: ");
-        Personaje1.setBounds(5, 10, 355, 40);
-        add(Personaje1); 
-        RestantesJ1 = new JLabel(aux1.getCantidad()+"");
-        RestantesJ1.setBounds(70, 10, 355, 40);
-        add(RestantesJ1);
-        
-        JPanel PanelP = new JPanel();
-        PanelP.setBounds(5, 50, 55, j*50);
-        PanelP.setBackground(Color.green);
-        add(PanelP);
-        
-        ObJugador aux2 =(ObJugador)JZombi.obtener(0);
-        JLabel J2 = new JLabel(aux2.getNombre());
-        J2.setBounds(i*50+65, 30, 55, 20);
-        add(J2);
-        
-        JLabel Personaje2 = new JLabel("restantes: ");
-        Personaje2.setBounds(i*50+65, 10, 355, 40);
-        add(Personaje2); 
-        RestantesJ2 = new JLabel(aux2.getCantidad()+"");
-        RestantesJ2.setBounds(i*50+130, 10, 355, 40);
-        add(RestantesJ2);
-        
-        
-        JPanel PanelZ = new JPanel();
-        PanelZ.setBounds(i*50+85, 50, 55, j*50);
-        PanelZ.setBackground(Color.BLACK);
-        add(PanelZ); 
-        
-        pzInicial();
-        //randomJ1();
-        
+        Random aleatorio = new Random();
+       int i;
+       for(i=0;i<5;i++)
+        {
+            
+            imagen[i]= new JButton();
+            imagen[i].setBounds(10, 50+50*i, 50, 50);
+            int valor = aleatorio.nextInt(Planta.size()-1);
+            ObJugado aux2 =(ObJugado)Planta.obtener(valor);
+            
+            String file = aux2.getImagen();
+            System.out.println(file);
+            ImageIcon icon = new ImageIcon(file);
+            Image img = icon.getImage();
+            
+            Image nuevaImg = img.getScaledInstance(50, 50, java.awt.Image.SCALE_SMOOTH);
+            ImageIcon newicon = new ImageIcon(nuevaImg);
+            imagen[i].setIcon(newicon);
+            imagen[i].setSize(50, 50);
+            imagen[i].addActionListener(this);
+            add(imagen[i]);
+            
+        }
         
     }
+    
+    int toca=0;
+    JButton JL;
      public void actionPerformed(ActionEvent e){
-        if(e.getSource()==JL)
+        if(e.getSource()==imagen[0])
         {
-            matlbl[0][0].setEnabled(true);
+            for(int x=0;x<fila;x++)
+            {
+                for(int y=0;y<columna;y++){
+                    if(toca%2==0){
+                    matlbl[x][y].setEnabled(true);
+                    }
+                    else{
+                        matlbl[x][y].setEnabled(false);
+                    }
+                   
+                }
+            } 
+            toca++;
         }
-        else if(e.getSource()==matlbl)
+        else 
         {
             
         }
     }
     
-     JButton JL;
-    public void pzInicial()
-    {
-        Random Aleatorio = new Random();
-        int valor = Aleatorio.nextInt(Planta.size());
-        ObJugado Ob = (ObJugado)Planta.obtener(valor);
-        
-        String file = Ob.getImagen();
-        ImageIcon icon = new ImageIcon(file);
-        Image img = icon.getImage();
-        Image nuevaImg = img.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
-        ImageIcon newicon = new ImageIcon(nuevaImg);
-        
-        //boton plantas
-       JL = new JButton(Ob.getNombre());
-        JL.setIcon(newicon);
-        JL.setSize(50,50);
-        JL.setBounds(7, 50, 50, 50);
-        JL.addActionListener(this);
-        add(JL);
-        PilaPlanta pp= new PilaPlanta();
-        pp.push(Ob);
-        ListaEnlazada JP=Planta;
-        
-        
-    }
+     JButton Lista1[]=new JButton[10];
     
    
     
@@ -195,6 +171,11 @@ public class tst extends javax.swing.JFrame implements ActionListener{
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("salir");
+        jMenu2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu2ActionPerformed(evt);
+            }
+        });
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
@@ -212,6 +193,10 @@ public class tst extends javax.swing.JFrame implements ActionListener{
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu2ActionPerformed
+        this.dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenu2ActionPerformed
 
     /**
      * @param args the command line arguments

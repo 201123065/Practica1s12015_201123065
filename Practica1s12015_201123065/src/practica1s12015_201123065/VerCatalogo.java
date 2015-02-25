@@ -76,9 +76,6 @@ public class VerCatalogo extends javax.swing.JFrame {
         Persona=Lista;
     }
     
-    
-    
-    
      public void Llenar( ListaEnlazada Lista)
     {
         

@@ -71,7 +71,7 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        Columnas.setText("2");
+        Columnas.setText("10");
         Columnas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ColumnasActionPerformed(evt);
@@ -99,7 +99,7 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        Filas.setText("2");
+        Filas.setText("10");
         Filas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 FilasActionPerformed(evt);
@@ -180,12 +180,11 @@ public class Menu extends javax.swing.JFrame {
                                 .addComponent(Error)
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(jButton1)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jLabel2)
-                                            .addGap(21, 21, 21))
-                                        .addComponent(Filas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addComponent(jLabel2)
+                                        .addComponent(Filas, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGap(5, 5, 5)))
                             .addComponent(jButton2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

@@ -8,6 +8,8 @@ package practica1s12015_201123065;
 
 import java.awt.Color;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Random;
 import java.util.Stack;
 import javax.swing.Icon;
@@ -15,12 +17,13 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.event.AncestorListener;
 
 /**
  *
  * @author marcosmayen
  */
-public class tst extends javax.swing.JFrame {
+public class tst extends javax.swing.JFrame implements ActionListener{
 
     /**
      * Creates new form tst
@@ -31,11 +34,14 @@ public class tst extends javax.swing.JFrame {
     }
 
     ListaEnlazada[][] Posicion;
+    int fila;
+    int columna;
+    JButton[][] matlbl;
     public void matriz(int x,int y)
     {
         Posicion = new ListaEnlazada[x][y];
         int i,j=0;
-        JButton[][] matlbl= new JButton[x][y];
+        matlbl= new JButton[x][y];
         for(i=0;i<x;i++)
         {
             for(j=0;j<y;j++)
@@ -46,18 +52,10 @@ public class tst extends javax.swing.JFrame {
                 add(matlbl[i][j]);
             }
         }
-        fondo(i,j);
+        fila=x;
+        columna=y;
         paneles(i,j);
     }
-    public void fondo(int x, int y)
-    {
-        ImageIcon icono = new ImageIcon("/imagenes/bg.jpg");
-        JLabel fondo = new JLabel();
-        fondo.setIcon(icono);
-        fondo.setBounds(10, 10, 100, 100);
-        add(fondo);
-    }
-    
     ListaEnlazada JPlanta = new ListaEnlazada();
     ListaEnlazada JZombi = new ListaEnlazada();
     ListaEnlazada Planta = new ListaEnlazada();
@@ -120,6 +118,18 @@ public class tst extends javax.swing.JFrame {
         
         
     }
+     public void actionPerformed(ActionEvent e){
+        if(e.getSource()==JL)
+        {
+            matlbl[0][0].setEnabled(true);
+        }
+        else if(e.getSource()==matlbl)
+        {
+            
+        }
+    }
+    
+     JButton JL;
     public void pzInicial()
     {
         Random Aleatorio = new Random();
@@ -132,10 +142,12 @@ public class tst extends javax.swing.JFrame {
         Image nuevaImg = img.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
         ImageIcon newicon = new ImageIcon(nuevaImg);
         
-        JButton JL = new JButton(Ob.getNombre());
+        //boton plantas
+       JL = new JButton(Ob.getNombre());
         JL.setIcon(newicon);
         JL.setSize(50,50);
-        JL.setBounds(5, 50, 50, 50);
+        JL.setBounds(7, 50, 50, 50);
+        JL.addActionListener(this);
         add(JL);
         PilaPlanta pp= new PilaPlanta();
         pp.push(Ob);
@@ -143,6 +155,8 @@ public class tst extends javax.swing.JFrame {
         
         
     }
+    
+   
     
     public void randomJ1()
     {
@@ -152,10 +166,6 @@ public class tst extends javax.swing.JFrame {
         RestantesJ1 = new JLabel(""+valor);
         RestantesJ1.setBounds(70, 10, 355, 40);
         add(RestantesJ1);
-    }
-    public void randomJ2()
-    {
-        
     }
     
     

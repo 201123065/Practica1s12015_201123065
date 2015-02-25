@@ -117,24 +117,7 @@ public class VerCatalogo extends javax.swing.JFrame {
             Ataque[i].setBounds(510, 10+100*i, 200, 100);
             add(Ataque[i]);
             
-            /*
             
-           
-            lblimagenes.setIcon(newicon);
-            lblimagenes.setSize(155, 175);
-            lblruta.setText(file);
-        }
-            
-            
-            
-           imagen[i].setIcon(new ImageIcon(file));
-            
-            ImageIcon icon = new ImageIcon(file);
-            Image img = icon.getImage();
-            Image newimg = img.getScaledInstance(155, 175, java.awt.Image.SCALE_SMOOTH);
-            ImageIcon newicon = new ImageIcon(newimg);
-            imagen[i].setIcon(newicon);
-            imagen[i].setSize(150, 170);*/
             
         }
     }

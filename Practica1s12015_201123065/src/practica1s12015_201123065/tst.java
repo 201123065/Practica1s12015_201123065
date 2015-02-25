@@ -8,6 +8,7 @@ package practica1s12015_201123065;
 
 import java.awt.Color;
 import java.awt.Image;
+import java.util.Random;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -108,6 +109,13 @@ public class tst extends javax.swing.JFrame {
         add(PanelZ); 
         
         
+    }
+    
+    public void randomJ1()
+    {
+        
+        Random Aleatorio = new Random();
+        int valor = Aleatorio.nextInt();
     }
     
     

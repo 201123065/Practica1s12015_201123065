@@ -19,7 +19,7 @@ public class ObJugado implements Serializable{
     } 
     /**/
     public ObJugado(String Imagen,String nom,String tipo,int puntos){
-       
+
         setImagen(Imagen);
         setNombre(nom);
         setPuntos(puntos);

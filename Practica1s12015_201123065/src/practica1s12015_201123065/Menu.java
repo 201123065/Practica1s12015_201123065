@@ -256,7 +256,7 @@ public class Menu extends javax.swing.JFrame {
         Dimension tam = kit.getScreenSize();
         posX0=(int) (tam.getWidth()/2)-((columna+350)/2);
         posX1=(int) (tam.getHeight()/2)-((fila+350)/2);;
-        mat.setBounds(posX0,posX1 , columna*50+150, fila*50+150);
+        mat.setBounds(posX0,posX1 , columna*50+180, fila*50+150);
         mat.setVisible(true);
         this.setVisible(false);
         

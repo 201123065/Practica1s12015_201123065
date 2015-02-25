@@ -9,6 +9,7 @@ package practica1s12015_201123065;
 import java.awt.Color;
 import java.awt.Image;
 import java.util.Random;
+import java.util.Stack;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -114,8 +115,31 @@ public class tst extends javax.swing.JFrame {
         PanelZ.setBackground(Color.BLACK);
         add(PanelZ); 
         
-        
+        pzInicial();
         //randomJ1();
+        
+        
+    }
+    public void pzInicial()
+    {
+        Random Aleatorio = new Random();
+        int valor = Aleatorio.nextInt(Planta.size());
+        ObJugado Ob = (ObJugado)Planta.obtener(valor);
+        
+        String file = Ob.getImagen();
+        ImageIcon icon = new ImageIcon(file);
+        Image img = icon.getImage();
+        Image nuevaImg = img.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
+        ImageIcon newicon = new ImageIcon(nuevaImg);
+        
+        JButton JL = new JButton(Ob.getNombre());
+        JL.setIcon(newicon);
+        JL.setSize(50,50);
+        JL.setBounds(5, 50, 50, 50);
+        add(JL);
+        PilaPlanta pp= new PilaPlanta();
+        pp.push(Ob);
+        ListaEnlazada JP=Planta;
         
         
     }
@@ -142,16 +166,25 @@ public class tst extends javax.swing.JFrame {
         jToolBar1 = new javax.swing.JToolBar();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
+        jMenu3 = new javax.swing.JMenu();
+        jMenu4 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
 
         jToolBar1.setRollover(true);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jMenu1.setText("File");
+        jMenu1.setText("Archivo");
+
+        jMenu3.setText("Ver Grafos");
+        jMenu1.add(jMenu3);
+
+        jMenu4.setText("Menu principal");
+        jMenu1.add(jMenu4);
+
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Edit");
+        jMenu2.setText("salir");
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
@@ -208,6 +241,8 @@ public class tst extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JToolBar jToolBar1;
     // End of variables declaration//GEN-END:variables

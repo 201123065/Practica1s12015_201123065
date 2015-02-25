@@ -127,6 +127,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="tfNombre">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="juega"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="tfCantidad">
       <Properties>

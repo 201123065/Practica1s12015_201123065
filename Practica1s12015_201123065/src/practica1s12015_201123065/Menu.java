@@ -249,6 +249,8 @@ public class Menu extends javax.swing.JFrame {
         tst mat = new tst();
         int posX0=0;
         int posX1=0;
+        
+        mat.setTipo(JPlantas, JZombi, Planta, Zombi);
 
         mat.matriz(columna, fila);
         Dimension tam = kit.getScreenSize();
@@ -257,6 +259,7 @@ public class Menu extends javax.swing.JFrame {
         mat.setBounds(posX0,posX1 , columna*50+150, fila*50+150);
         mat.setVisible(true);
         this.setVisible(false);
+        
     }
     
     

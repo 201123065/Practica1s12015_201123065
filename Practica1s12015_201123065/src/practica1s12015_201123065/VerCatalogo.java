@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 package practica1s12015_201123065;
 
@@ -16,9 +11,9 @@ import javax.swing.JLabel;
  */
 public class VerCatalogo extends javax.swing.JFrame {
 
-    /**
-     * Creates new form VerCatalogo
-     */
+    
+    
+    
     public VerCatalogo() {
         initComponents();
     }
@@ -101,6 +96,7 @@ public class VerCatalogo extends javax.swing.JFrame {
             System.out.println(file);
             ImageIcon icon = new ImageIcon(file);
             Image img = icon.getImage();
+            
             Image nuevaImg = img.getScaledInstance(100, 100, java.awt.Image.SCALE_SMOOTH);
             ImageIcon newicon = new ImageIcon(nuevaImg);
             imagen[i].setIcon(newicon);
@@ -112,6 +108,14 @@ public class VerCatalogo extends javax.swing.JFrame {
             Nombre[i].setBounds(190, 10+100*i, 200, 100);
             add(Nombre[i]);
             
+            String punto = Integer.toString(aux2.getPuntos());
+            Puntos[i]= new JLabel(punto);
+            Puntos[i].setBounds(350, 10+100*i, 200, 100);
+            add(Puntos[i]);
+            
+            Ataque[i]= new JLabel(aux2.getTipo());
+            Ataque[i].setBounds(510, 10+100*i, 200, 100);
+            add(Ataque[i]);
             
             /*
             

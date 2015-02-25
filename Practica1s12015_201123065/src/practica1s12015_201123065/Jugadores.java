@@ -59,6 +59,8 @@ public class Jugadores extends javax.swing.JFrame {
 
         jLabel3.setText("Cantidad");
 
+        tfNombre.setText("juega");
+
         tfCantidad.setText("0");
         tfCantidad.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {

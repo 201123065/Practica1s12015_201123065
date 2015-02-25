@@ -116,6 +116,14 @@ public class catalogo extends javax.swing.JFrame {
             }
         });
 
+        tbNombre.setText(":D");
+
+        tbPuntos.setText("10");
+        tbPuntos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbPuntosActionPerformed(evt);
+            }
+        });
         tbPuntos.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 tbPuntosKeyTyped(evt);
@@ -360,6 +368,10 @@ public class catalogo extends javax.swing.JFrame {
         catalogo.setVisible(true);
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void tbPuntosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbPuntosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tbPuntosActionPerformed
 
     /**
      * @param args the command line arguments

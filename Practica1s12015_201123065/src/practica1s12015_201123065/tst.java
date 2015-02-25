@@ -75,7 +75,7 @@ public class tst extends javax.swing.JFrame {
     }
      
      
-     
+     JLabel RestantesJ1, RestantesJ2;
     public void paneles(int i, int j)
     {
         
@@ -84,9 +84,12 @@ public class tst extends javax.swing.JFrame {
         J1.setBounds(5, 30, 55, 20);
         add(J1);
         
-        JLabel Personaje1 = new JLabel("restantes: "+aux1.getCantidad());
+        JLabel Personaje1 = new JLabel("restantes: ");
         Personaje1.setBounds(5, 10, 355, 40);
-        add(Personaje1);
+        add(Personaje1); 
+        RestantesJ1 = new JLabel(aux1.getCantidad()+"");
+        RestantesJ1.setBounds(70, 10, 355, 40);
+        add(RestantesJ1);
         
         JPanel PanelP = new JPanel();
         PanelP.setBounds(5, 50, 55, j*50);
@@ -98,9 +101,12 @@ public class tst extends javax.swing.JFrame {
         J2.setBounds(i*50+65, 30, 55, 20);
         add(J2);
         
-        JLabel Personaje2 = new JLabel("restantes: "+aux2.getCantidad());
+        JLabel Personaje2 = new JLabel("restantes: ");
         Personaje2.setBounds(i*50+65, 10, 355, 40);
-        add(Personaje2);
+        add(Personaje2); 
+        RestantesJ2 = new JLabel(aux2.getCantidad()+"");
+        RestantesJ2.setBounds(i*50+130, 10, 355, 40);
+        add(RestantesJ2);
         
         
         JPanel PanelZ = new JPanel();
@@ -109,13 +115,23 @@ public class tst extends javax.swing.JFrame {
         add(PanelZ); 
         
         
+        //randomJ1();
+        
+        
     }
     
     public void randomJ1()
     {
-        
+        ObJugador J1 = (ObJugador)JPlanta.obtener(0);
         Random Aleatorio = new Random();
-        int valor = Aleatorio.nextInt();
+        int valor = Aleatorio.nextInt(J1.getCantidad());
+        RestantesJ1 = new JLabel(""+valor);
+        RestantesJ1.setBounds(70, 10, 355, 40);
+        add(RestantesJ1);
+    }
+    public void randomJ2()
+    {
+        
     }
     
     

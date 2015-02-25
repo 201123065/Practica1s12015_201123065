@@ -92,6 +92,7 @@ public class VerCatalogo extends javax.swing.JFrame {
             imagen[i]= new JLabel();
             imagen[i].setBounds(10, 10+100*i, 100, 100);
             ObJugado aux2 =(ObJugado)Lista.obtener(i);
+            
             String file = aux2.getImagen();
             System.out.println(file);
             ImageIcon icon = new ImageIcon(file);

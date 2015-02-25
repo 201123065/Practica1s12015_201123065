@@ -61,7 +61,7 @@ public class Jugadores extends javax.swing.JFrame {
 
         tfNombre.setText("juega");
 
-        tfCantidad.setText("0");
+        tfCantidad.setText("1");
         tfCantidad.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 tfCantidadKeyTyped(evt);
@@ -198,7 +198,7 @@ public class Jugadores extends javax.swing.JFrame {
     
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
-        if(tfNombre.getText().equals(""))
+        if(tfNombre.getText().equals("")||tfCantidad.getText()=="0")
         {
             Error.setText("coloque el nombre del jugador");
         }

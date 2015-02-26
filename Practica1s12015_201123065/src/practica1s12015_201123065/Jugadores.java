@@ -188,7 +188,7 @@ public class Jugadores extends javax.swing.JFrame {
             Otro.setText(extra.getText());
         }
         else{
-            Otro.setText(Otro.getText()+"\n"+extra.getText()); 
+            Otro.setText(Otro.getText()+"->"+extra.getText()); 
         }
         extra.setText("");
     }//GEN-LAST:event_jButton2ActionPerformed

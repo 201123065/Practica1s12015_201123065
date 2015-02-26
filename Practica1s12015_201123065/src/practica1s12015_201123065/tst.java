@@ -163,6 +163,11 @@ public class tst extends javax.swing.JFrame implements ActionListener{
         jMenu1.setText("Archivo");
 
         jMenu3.setText("Ver Grafos");
+        jMenu3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu3MouseClicked(evt);
+            }
+        });
         jMenu1.add(jMenu3);
 
         jMenu4.setText("Menu principal");
@@ -197,6 +202,12 @@ public class tst extends javax.swing.JFrame implements ActionListener{
     private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu2ActionPerformed
         this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_jMenu2ActionPerformed
+
+    private void jMenu3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu3MouseClicked
+        Graphviz Op = new Graphviz();
+        Op.generaTXT(JPlanta, JZombi, Planta, Zombi);
+        
+    }//GEN-LAST:event_jMenu3MouseClicked
 
     /**
      * @param args the command line arguments
